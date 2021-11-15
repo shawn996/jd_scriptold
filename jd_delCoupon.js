@@ -150,6 +150,7 @@ function getCoupon() {
 function isJDCoupon(title) {
   if (title.indexOf('旗舰店') > -1) return false;
   if (title.indexOf('店铺部分商品') > -1) return false;
+  if (title.indexOf('店铺商品') > -1) return false;
   return true;
 }
 
