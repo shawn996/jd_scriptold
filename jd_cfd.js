@@ -84,12 +84,12 @@ if ($.isNode()) {
       await $.wait(2000);
     }
   }
-  let res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/cfd.json')
-  if (!res) {
-    $.http.get({url: 'https://purge.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/cfd.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
-    await $.wait(1000)
-    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/cfd.json')
-  }
+  // let res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/cfd.json')
+  // if (!res) {
+  //   $.http.get({url: 'https://purge.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/cfd.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+  //   await $.wait(1000)
+  //   res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/cfd.json')
+  // }
   $.strMyShareIds = [...(res && res.shareId || [])]
   await shareCodesFormat()
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -477,7 +477,7 @@ async function mermaidOper(strStoryId, dwType, ddwTriggerDay) {
                 console.log(`昨日解救美人鱼领奖成功：获得${data.Data.Prize.strPrizeName}\n`)
               } else {
                 console.log(`昨日解救美人鱼领奖失败：${data.sErrMsg}\n`)
-              }             
+              }
               break
             default:
               break

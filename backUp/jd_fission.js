@@ -31,12 +31,12 @@ let autoCode = '',projectId = '',helpId = '';
         console.log(`活动结束`);
         return;
     }
-    let res = [];
-    try{res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/shop.json');}catch (e) {}
-    if(!res){
-        try{res = await getAuthorShareCode('https://raw.fastgit.org/asd920/updateTeam/main/shareCodes/shop.json');}catch (e) {}
-        if(!res){res = [];}
-    }
+    // let res = [];
+    // try{res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/shop.json');}catch (e) {}
+    // if(!res){
+    //     try{res = await getAuthorShareCode('https://raw.fastgit.org/asd920/updateTeam/main/shareCodes/shop.json');}catch (e) {}
+    //     if(!res){res = [];}
+    // }
 
     if(res.length > 0){
         autoCode = getRandomArrayElements(res,1)[0];

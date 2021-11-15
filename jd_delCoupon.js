@@ -110,19 +110,19 @@ function getCoupon() {
           let couponId = ''
           if (states[s] === '6') {
             // 删除已过期
-            let expire = data['coupon']['expired']
-            for (let i = 0; i < expire.length; i++) {
-              couponTitle = expire[i].couponTitle
-              couponId = escape(`${expire[i].couponid},1,0`);
-              await delCoupon(couponId, couponTitle)
-            }
+            // let expire = data['coupon']['expired']
+            // for (let i = 0; i < expire.length; i++) {
+            //   couponTitle = expire[i].couponTitle
+            //   couponId = escape(`${expire[i].couponid},1,0`);
+            //   await delCoupon(couponId, couponTitle)
+            // }
             // 删除已使用
-            let used = data['coupon']['used']
-            for (let i = 0; i < used.length; i++) {
-              couponTitle = used[i].couponTitle
-              couponId = escape(`${used[i].couponid},0,0`);
-              await delCoupon(couponId, couponTitle)
-            }
+            // let used = data['coupon']['used']
+            // for (let i = 0; i < used.length; i++) {
+            //   couponTitle = used[i].couponTitle
+            //   couponId = escape(`${used[i].couponid},0,0`);
+            //   await delCoupon(couponId, couponTitle)
+            // }
           } else if (states[s] === '1') {
             // 删除可使用且非超市、生鲜、京贴
             let useable = data.coupon.useable
@@ -148,26 +148,8 @@ function getCoupon() {
 }
 
 function isJDCoupon(title) {
-  if (title.indexOf('京东') > -1)
-    return true
-  else if (title.indexOf('超市') > -1)
-    return true
-  else if (title.indexOf('1元爆品') > -1)
-    return true
-  else if (title.indexOf('京贴') > -1)
-    return true
-  else if (title.indexOf('国际') > -1)
-    return false
-  else if (title.indexOf('旗舰店') > -1)
-    return false
-  else if (title.indexOf('生鲜') > -1)
-    return true
-  else if (title.indexOf('9.9减9') > -1)
-    return true
-  else if (title.indexOf('食品饮料') > -1)
-    return true
-  else
-    return false
+  if (title.indexOf('旗舰店') > -1) return false;
+  return true;
 }
 
 function showMsg() {

@@ -3,7 +3,7 @@
 
 后续添加自动兑换功能 如入会失败 自行去入会
 入口 京东 频道 美食馆
-零食街自动兑换变量 
+零食街自动兑换变量
 export lsjdh="jdAward1" ##兑换5豆
 export lsjdh="jdAward2" ##兑换10豆
 export lsjdh="jdAward3" ##兑换100豆
@@ -20,7 +20,7 @@ let useInfo = {};
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let newShareCodes = [];
-$.ShareCode = ['08EFA799F8D5FB996767AB8D5F84C302211790C5940735B3C8CB3C719CB08DC349336DE54E26AA8F2834B248E6398CB7A755DF4FDAE585EC3E1ABE26F3DD3CFFC956D12974FF00A045D8E31A84FE84C18A8357DE96A1F617B8AC4D64BC24B689'];
+$.ShareCode = [];
 let lsjdh = '';
 if (process.env.lsjdh) {
   lsjdh = process.env.lsjdh;
@@ -75,7 +75,7 @@ if ($.isNode()) {
       for (let k = 0; k < $.ShareCode.length && $.canHelp; k++) {
       $.oneCodeInfo = $.ShareCode[k];if($.UserName === $.ShareCode[k] || $.oneCodeInfo.max){
         continue;
-      
+
       }
       console.log(`${$.UserName}去助力${newShareCodes[j].usr}`)
       console.log(`${$.UserName}去助力${ $.ShareCode}`)
@@ -117,7 +117,7 @@ await $.wait(3000)
 await doliulan(2)
 await $.wait(3000)
 await doliulan(3)
-//await gettask()  
+//await gettask()
 
 $.log("开始浏览会场")
 await doshop(1000014803)
@@ -238,12 +238,12 @@ headers: {
             try {
 
                     const reust = JSON.parse(data)
-                 
+
                     if(reust.errorCode == 200){
-                   
+
                     $.log(`${reust.data.data.remark}\n获得${reust.data.data.sendNum}`)
                     }else if(reust.errorCode == 500) {
-                    
+
                         $.log("今日已领取完毕,请明日再来！"+reust.errorMessage)
                     }
             } catch (e) {

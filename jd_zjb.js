@@ -14,7 +14,7 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-let InviterPin = 'x4zBD58QffhhGDC18ljJZEMP0mswe3bYrB3AAtKQqFc='; //
+let InviterPin = 'eQl2TKAOhH1fg4PzYz1tFw=='; //
 
 
 if ($.isNode()) {
@@ -132,7 +132,7 @@ headers: {
                     //console.log(reust)
                     if(reust.code == 0){
                     $.log(`即将开始邀请：${InviterPin}\n邀请获得金币: `+reust.data.coinReward*0.1+"金币")
-                }else  
+                }else
 
                     console.log(reust.message)
             } catch (e) {

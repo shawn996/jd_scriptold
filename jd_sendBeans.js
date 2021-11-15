@@ -138,6 +138,7 @@ if ($.isNode()) {
 })().catch((e) => {$.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')}).finally(() => {$.done();});
 
 async function getAuthorShareCode() {
+  return [];
     return new Promise(resolve => {
         $.get({
             url: "https://raw.fastgit.org/asd920/updateTeam/main/shareCodes/sddd.json",

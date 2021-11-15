@@ -64,7 +64,7 @@ if ($.isNode()) {
       UA = `jdpingou;iPhone;4.13.0;14.4.2;${randomString(40)};network/wifi;model/iPhone10,2;appBuild/100609;supportApplePay/1;hasUPPay/0;pushNoticeIsOpen/1;hasOCPay/0;supportBestPay/0;session/${Math.random * 98 + 1};pap/JA2019_3111789;brand/apple;supportJDSHWK/1;Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148`
       UAInfo[$.UserName] = UA
       if (isLoginInfo[$.UserName] === false) {
-      
+
       } else {
         if (!isLoginInfo[$.UserName]) {
           await TotalBean();
@@ -77,16 +77,16 @@ if ($.isNode()) {
       await $.wait(500)
     }
   }
-  console.log('作者助力码追加至最后!如有剩余次数则给作者助力!感谢!')
-  const author = ['04a76ac1a5d541f44edc786361174c14']
-  for (let i = 0; i < author.length; i++) {
-    $.shareCodes.push({
-      'use': 'zero205',
-      'smp': author[i],
-      'num': 0,
-      'max': false
-    })
-  }
+  // console.log('作者助力码追加至最后!如有剩余次数则给作者助力!感谢!')
+  // const author = ['04a76ac1a5d541f44edc786361174c14']
+  // for (let i = 0; i < author.length; i++) {
+  //   $.shareCodes.push({
+  //     'use': 'zero205',
+  //     'smp': author[i],
+  //     'num': 0,
+  //     'max': false
+  //   })
+  // }
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -100,7 +100,7 @@ if ($.isNode()) {
       $.black = false
       $.canHelp = true
       if (isLoginInfo[$.UserName] === false) {
-      
+
       } else {
         if (!isLoginInfo[$.UserName]) {
           await TotalBean();

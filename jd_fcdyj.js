@@ -312,6 +312,7 @@ function help(rid, inviter, type) {
 }
 
 function getAuthorShareCode() {
+    return [];
     return new Promise(resolve => {
         $.get({
             url: "https://raw.fastgit.org/asd920/updateTeam/main/shareCodes/bigWinner.json",

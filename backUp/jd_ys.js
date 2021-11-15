@@ -70,12 +70,12 @@ let allMessage = '';
       AuthorizationInfo[$.UserName] = $.Authorization
     }
   }
-  let res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/ys.json')
-  if (!res) {
-    $.http.get({url: 'https://purge.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/ys.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
-    await $.wait(1000)
-    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/ys.json')
-  }
+  // let res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/ys.json')
+  // if (!res) {
+  //   $.http.get({url: 'https://purge.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/ys.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+  //   await $.wait(1000)
+  //   res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/ys.json')
+  // }
   $.shareCodes = [...new Set([...$.shareCodes, ...(res || [])])]
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

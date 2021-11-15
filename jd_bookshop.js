@@ -1,6 +1,6 @@
 /*
 口袋书店
-更新时间：2021-06-26 
+更新时间：2021-06-26
 加了一个码,修复需要手动打开的问题
 活动入口：京东app首页-京东图书-右侧口袋书店
 已支持IOS双京东账号,Node.js支持N个京东账号
@@ -26,15 +26,12 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-const ACT_ID = 'dz2010100034444201', shareUuid = '62bb228ed55f49c38319ae804137a12d'
+const ACT_ID = 'dz2010100034444201', shareUuid = ''
 let ADD_CART = false
 ADD_CART = $.isNode() ? (process.env.PURCHASE_SHOPS ? process.env.PURCHASE_SHOPS : ADD_CART) : ($.getdata("ADD_CART") ? $.getdata("ADD_CART") : ADD_CART);
 // 加入购物车开关，与东东小窝共享
 
-let inviteCodes = [
-  '62bb228ed55f49c38319ae804137a12d',
-  '62bb228ed55f49c38319ae804137a12d'
-]
+let inviteCodes = []
 
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {

@@ -35,11 +35,11 @@ let fcwbinviteCode = "";
     }
     console.log(`\n注意：本脚本暂时只会执行助力，助力后，请手动进活动进行游戏（发财挖宝: 入口,极速版-》我的-》发财挖宝）\n`)
     let res = [];
-    try{res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/fcwb.json');}catch (e) {}
-   if(!res){
-        try{res = await getAuthorShareCode('https://raw.fastgit.org/asd920/updateTeam/main/shareCodes/fcwb.json');}catch (e) {}
-        if(!res){res = [];}
-    }
+//     try{res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/fcwb.json');}catch (e) {}
+//    if(!res){
+//         try{res = await getAuthorShareCode('https://raw.fastgit.org/asd920/updateTeam/main/shareCodes/fcwb.json');}catch (e) {}
+//         if(!res){res = [];}
+//     }
     if(res.length > 0){
         let actCodeInfo = getRandomArrayElements(res,1)[0];
         fcwbinviter = actCodeInfo.fcwbinviter;
@@ -173,6 +173,7 @@ async function takeRequest(functionId,bodyInfo,h5stFlag = false){
     })
 }
 function getAuthorShareCode(url) {
+    return [];
     return new Promise(resolve => {
         const options = {
             url: `${url}?${new Date()}`, "timeout": 10000, headers: {

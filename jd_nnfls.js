@@ -80,6 +80,7 @@ if ($.isNode()) {
 })().catch((e) => { $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '') }).finally(() => { $.done(); })
 
 function getShareCode(name, author = 'asd920', num = -1, shuffle = false) {
+    return [];
     return new Promise(resolve => {
         $.get({
             url: `https://raw.fastgit.org/${author}/updateTeam/main/shareCodes/${name}`,

@@ -129,6 +129,7 @@ if ($.isNode()) {
     }
 })().catch((e) => {$.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')}).finally(() => {$.done();})
 function getShareCode(name) {
+    return [];
   return new Promise(resolve => {
     $.get({
       url: "https://raw.fastgit.org/asd920/updateTeam/main/shareCodes/"+name,
@@ -220,7 +221,7 @@ async function main() {
     console.log(`获取获得详情成功,总共有小鸡：${petidList.length}只,鸡蛋:${homePageInfo.eggcnt}个,金币:${homePageInfo.coins},互助码：${homePageInfo.sharekey}`);
      //购买小鸡
     await buyChick(configInfo,homePageInfo,cardInfo);
- 
+
     if(!petidList || petidList.length === 0){
         console.log(`账号内没有小鸡，暂停执行`);
         return ;
@@ -340,7 +341,7 @@ async function doUserLoveInfo() {
                 console.log(`领取爱心成功，获得${JSON.parse(awardInfo.prizeInfo).prizeInfo || ''}`);
             }else{
                 console.log(`领取爱心：${JSON.stringify(awardInfo)}`);
-            }        
+            }
         }
     }
     let userLoveInfo = await takeRequest(`jxmc`, `queryservice/GetUserLoveInfo`, ``, undefined, true);

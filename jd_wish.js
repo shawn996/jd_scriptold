@@ -72,12 +72,12 @@ if ($.isNode()) {
     if ($.isNode()) await notify.sendNotify($.name, allMessage);
     $.msg($.name, '', allMessage)
   }
-  let res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/wish.json')
-  if (!res) {
-    $.http.get({url: 'https://purge.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/wish.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
-    await $.wait(1000)
-    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/wish.json')
-  }
+  // let res = await getAuthorShareCode('https://raw.githubusercontent.com/asd920/updateTeam/main/shareCodes/wish.json')
+  // if (!res) {
+  //   $.http.get({url: 'https://purge.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/wish.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+  //   await $.wait(1000)
+  //   res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/asd920/updateTeam@main/shareCodes/wish.json')
+  // }
   $.shareCode = [...$.shareCode, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -160,7 +160,7 @@ async function healthyDay_getHomeData(type = true) {
                   if (vo.taskType === 13 || vo.taskType === 12) {
                     console.log(`签到`)
                     await harmony_collectScore({"appId":appId,"taskToken":vo.simpleRecordInfoVo.taskToken,"taskId":vo.taskId,"actionType":"0"}, vo.taskType)
-                  } else if (vo.taskType === 1) {          
+                  } else if (vo.taskType === 1) {
                     $.complete = false;
                     for (let key of Object.keys(vo.followShopVo)) {
                       let followShopVo = vo.followShopVo[key]

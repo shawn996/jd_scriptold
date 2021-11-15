@@ -35,7 +35,7 @@ cron "10 * * * *" script-path=https://jdsharedresourcescdn.azureedge.net/jdresou
 
 const $ = new Env('京喜工厂');
 const JD_API_HOST = 'https://m.jingxi.com';
-const helpAu = true; //帮作者助力 免费拿活动
+const helpAu = false; //帮作者助力 免费拿活动
 const notify = $.isNode() ? require('./sendNotify') : '';
 //通知级别 1=生产完毕可兑换通知;2=可兑换通知+生产超时通知+兑换超时通知;3=可兑换通知+生产超时通知+兑换超时通知+未选择商品生产通知(前提：已开通京喜工厂活动);默认第2种通知
 let notifyLevel = $.isNode() ? process.env.JXGC_NOTIFY_LEVEL || 2 : 2;
@@ -43,10 +43,7 @@ const randomCount = $.isNode() ? 1 : 0;
 let tuanActiveId = ``, hasSend = false;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '', allMessage = '';
-const inviteCodes = [
-  "zulT8XTLky1DEZdgXef6OA==@NL6BKAs5P5mDbnI52XqxXQ==",
-  "zulT8XTLky1DEZdgXef6OA==@6lw84c1ARwpoRyOtfnF77g=="
-];
+const inviteCodes = [];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 $.tuanIds = [];
 $.appId = 10001;
@@ -114,7 +111,7 @@ if ($.isNode()) {
         }
           if ($.canHelp) await joinLeaderTuan();//参团
       }
-      
+
     }
   }
   if ($.isNode() && allMessage) {
@@ -138,7 +135,7 @@ async function jdDreamFactory() {
     // await collectElectricity()
     await getUserElectricity();
     await taskList();
-    await investElectric();
+    //await investElectric();//不自动添加电力
     await QueryHireReward();//收取招工电力
    // await PickUp();//收取自家的地下零件
   //  await stealFriend();
