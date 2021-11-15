@@ -1,6 +1,6 @@
 /*
  * @Author:  LXK9301 https://github.com/LXK9301
- * @Date: 2020-08-19 16:12:40 
+ * @Date: 2020-08-19 16:12:40
  * @Last Modified by: LXK9301
  * @Last Modified time: 2021-1-7 17:52:54
  */
@@ -135,7 +135,6 @@ if (process.env.PUSH_PLUS_USER) {
 
 async function sendNotify(text, desp, params = {}) {
   //提供6种通知
-  desp += `\n【通知】：\n本仓库备份地址：\nhttps://gitee.com/asd920/Auto-jd`;
   await Promise.all([
     serverNotify(text, desp),//微信server酱
     pushPlusNotify(text, desp)//pushplus(推送加)
@@ -612,7 +611,7 @@ function iGotNotify(text, desp, params={}){
       if(!IGOT_PUSH_KEY_REGX.test(IGOT_PUSH_KEY)) {
         console.log('您所提供的IGOT_PUSH_KEY无效\n')
         resolve()
-        return 
+        return
       }
       const options = {
         url: `https://push.hellyw.com/${IGOT_PUSH_KEY.toLowerCase()}`,
