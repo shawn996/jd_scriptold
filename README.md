@@ -3,5 +3,5 @@
 
 【青龙】拉取仓库命令
 ```
-ql repo https://github.com/shawn996/jd_script.git "jd_|jx_|getJDCookie" "backUp" "^jd[^_]|USER|sendNotify|sign_graphics_validate|JDJR|JDSign"
+ql repo https://github.com/shawn996/jd_script.git "jd_|jx_|getJDCookie" "backUp" "^jd[^_]|USER|sendNotify|sign_graphics_validate|JDJR|JDSign|JD_DailyBonus"
 ```
