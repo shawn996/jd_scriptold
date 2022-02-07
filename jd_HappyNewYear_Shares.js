@@ -48,7 +48,7 @@ let timeH = $.time('H')
     $.msg($.name, '活动已结束', `请删除此脚本\n咱江湖再见`);
     return
   }
-  $.temp = ['ycXdOaS1kgjOABMAeMisKk2LtmuULrZ7aQ'];
+  $.temp = [];
 
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
@@ -95,7 +95,7 @@ let timeH = $.time('H')
             break
           }
         }
-        
+
       }
     }
   }catch(e){
@@ -119,7 +119,7 @@ async function run(type = 0){
   }
 }
 function getCoupons(code = '') {
-  
+
   return new Promise(async resolve => {
     await requestAlgo();
     let time = Date.now()
