@@ -12,7 +12,6 @@ by:小手冰凉 tg:@chianPLA
 const $ = new Env("微信签到领红包");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
-const request = require('request');
 let cookiesArr = [], cookie = ''
 
 if ($.isNode()) {
